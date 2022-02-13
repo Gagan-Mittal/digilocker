@@ -1,5 +1,23 @@
 {
   "dependencies": {
-    "ganache-cli": "^6.12.2"
-  }
+    "ganache-cli": "^6.12.2",
+    "web3": "^1.6.0"
+  },
+  "name": "digital-locker-with-blockchain",
+  "description": "This is Ethereum powered Dapp for storing and sharing documents with access rights",
+  "version": "1.0.0",
+  "main": "certificates.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gagan-Mittal/Digital-Locker-with-Blockchain.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Gagan-Mittal/Digital-Locker-with-Blockchain/issues"
+  },
+  "homepage": "https://github.com/Gagan-Mittal/Digital-Locker-with-Blockchain#readme"
 }

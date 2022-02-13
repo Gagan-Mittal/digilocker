@@ -1,8 +1,20 @@
+// import Web3 from 'web3';
+// import Web3 from 'web3';
+// const Portis = require("@portis/web3");
+
+import web3 from "./web3.js";
+// const Web3 = require("web3");
 $(document).ready(function () {
     const ipfs = window.IpfsApi({ host: 'ipfs.infura.io', port: 5001, protocol: 'https' });
     const Buffer = window.IpfsApi().Buffer;
-    const ContractAddress = "0x69F2ABfB13a470385e1aa6709Fa51CF275273213";
+    const ContractAddress = "0x915ffD5acac33181F401C9ACCA8cB324E4964a72";
     //check if metamask is installed
+
+
+// window.ethereum.send('eth_requestAccounts');
+    
+    // const web3 = new Web3(window.ethereum);
+    console.log(web3)
     if (typeof web3 === "undefined") {
         return showError("Please install MetaMask.");
     }
@@ -66,11 +78,14 @@ $(document).ready(function () {
         //TODO: Write the Logic behind Uploading a Certificate to IPFS and adding the information to the Blockchain
         if($('#CertificateForUpload')[0].files.length==0){
             return showError("Please select a file");
+            console.log("2")
         }
-        
+        console.log("1")
         window.addEventListener('load', async () => {
             // Modern dapp browsers...
+            console.log("3")
             if (window.ethereum) {
+                await window.ethereum.send("eth_requestAccounts");
                 window.web3 = new Web3(ethereum);
                 try {
                     // Request account access if needed
@@ -204,7 +219,11 @@ $(document).ready(function () {
         showView("viewGetCertificates");
         viewGetCertificates();
     });
-    $('#CertificateUploadButton').click(uploadCertificate);
+   
+    $('#CertificateUploadButton').click(()=> {
+        console.log("inner");
+        uploadCertificate();
+    } );
 
 // Attach AJAX "loading" event listener
     $(document).on({
